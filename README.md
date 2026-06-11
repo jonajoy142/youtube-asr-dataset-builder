@@ -135,4 +135,4 @@ This is part of a larger research effort:
 
 ---
 
-*Built by Jona Joy | Kireap Technologies*
+*Built by Jona Joy*
