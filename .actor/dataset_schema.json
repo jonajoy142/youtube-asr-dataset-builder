@@ -1,0 +1,71 @@
+{
+  "actorSpecification": 1,
+  "fields": [
+    {
+      "name": "clip_id",
+      "title": "Clip ID",
+      "description": "Unique identifier for the clip",
+      "example": "ml_en_0042"
+    },
+    {
+      "name": "youtube_id",
+      "title": "YouTube Video ID",
+      "description": "YouTube video ID — use to reconstruct URL: https://youtube.com/watch?v={youtube_id}",
+      "example": "dQw4w9WgXcQ"
+    },
+    {
+      "name": "start_sec",
+      "title": "Clip Start (seconds)",
+      "description": "Start time of this clip within the video",
+      "example": 42.3
+    },
+    {
+      "name": "end_sec",
+      "title": "Clip End (seconds)",
+      "description": "End time of this clip within the video",
+      "example": 55.1
+    },
+    {
+      "name": "transcript",
+      "title": "Transcript",
+      "description": "Full transcript of the clip",
+      "example": "Njan yesterday office-il പോയി, but the meeting was boring"
+    },
+    {
+      "name": "language_spans",
+      "title": "Language Spans",
+      "description": "Word-level language tags with timestamps",
+      "example": [{"start": 0.0, "end": 0.4, "lang": "ml", "text": "Njan"}]
+    },
+    {
+      "name": "switch_points",
+      "title": "Switch Points (seconds)",
+      "description": "Timestamps where language switches occur",
+      "example": [0.4, 1.8, 3.2]
+    },
+    {
+      "name": "switch_count",
+      "title": "Number of Switches",
+      "description": "How many language switches in this clip",
+      "example": 3
+    },
+    {
+      "name": "primary_lang_ratio",
+      "title": "Primary Language Ratio",
+      "description": "Fraction of words in the primary (non-English) language",
+      "example": 0.42
+    },
+    {
+      "name": "confidence",
+      "title": "Whisper Confidence",
+      "description": "Average Whisper transcription confidence score",
+      "example": 0.87
+    },
+    {
+      "name": "audio_file",
+      "title": "Local Audio File",
+      "description": "Path to local audio file (only present if publishIdsOnly is false)",
+      "example": "output/ml_en_0042.wav"
+    }
+  ]
+}

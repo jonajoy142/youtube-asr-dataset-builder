@@ -1,0 +1,16 @@
+{
+  "searchQueries": [
+    "Malayalam English vlog Kerala",
+    "Manglish interview",
+    "Kerala tech talk English",
+    "Malayalam English mix conversation"
+  ],
+  "youtubeUrls": [],
+  "primaryLanguage": "ml",
+  "whisperModel": "small",
+  "maxVideos": 5,
+  "minClipDuration": 4,
+  "maxClipDuration": 15,
+  "minCodeSwitchRatio": 0.15,
+  "publishIdsOnly": true
+}

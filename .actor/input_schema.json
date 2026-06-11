@@ -1,0 +1,82 @@
+{
+  "title": "Multilingual Code-Switching Scraper Input",
+  "description": "Configure the scraper to find and extract code-switched speech segments from YouTube.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchQueries": {
+      "title": "YouTube Search Queries",
+      "description": "List of search terms to find relevant YouTube videos. E.g. 'Malayalam vlog', 'Manglish interview', 'Kerala tech talk'",
+      "type": "array",
+      "editor": "stringList",
+      "default": ["Malayalam English vlog", "Manglish interview", "Kerala tech talk English"]
+    },
+    "youtubeUrls": {
+      "title": "Specific YouTube URLs (optional)",
+      "description": "Directly provide YouTube video URLs to process instead of or in addition to search queries.",
+      "type": "array",
+      "editor": "stringList",
+      "default": []
+    },
+    "primaryLanguage": {
+      "title": "Primary Language",
+      "description": "The main non-English language you expect in the audio.",
+      "type": "string",
+      "editor": "select",
+      "enum": ["ml", "hi", "ta", "te", "kn", "bn"],
+      "enumTitles": ["Malayalam", "Hindi", "Tamil", "Telugu", "Kannada", "Bengali"],
+      "default": "ml"
+    },
+    "whisperModel": {
+      "title": "Whisper Model Size",
+      "description": "Larger = more accurate but slower. 'small' recommended for most use cases.",
+      "type": "string",
+      "editor": "select",
+      "enum": ["tiny", "base", "small", "medium"],
+      "enumTitles": ["Tiny (fastest)", "Base", "Small (recommended)", "Medium (most accurate)"],
+      "default": "small"
+    },
+    "maxVideos": {
+      "title": "Max Videos to Process",
+      "description": "Maximum number of YouTube videos to download and process per run.",
+      "type": "integer",
+      "editor": "number",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 50
+    },
+    "minClipDuration": {
+      "title": "Minimum Clip Duration (seconds)",
+      "description": "Ignore segments shorter than this.",
+      "type": "integer",
+      "editor": "number",
+      "default": 4,
+      "minimum": 2
+    },
+    "maxClipDuration": {
+      "title": "Maximum Clip Duration (seconds)",
+      "description": "Split segments longer than this.",
+      "type": "integer",
+      "editor": "number",
+      "default": 15,
+      "maximum": 30
+    },
+    "minCodeSwitchRatio": {
+      "title": "Minimum Code-Switch Ratio",
+      "description": "Reject clips where one language dominates too much. 0.15 means at least 15% must be the minority language.",
+      "type": "number",
+      "editor": "number",
+      "default": 0.15,
+      "minimum": 0.05,
+      "maximum": 0.5
+    },
+    "publishIdsOnly": {
+      "title": "Research Mode (IDs Only)",
+      "description": "If true, output only YouTube video IDs + timestamps (for HuggingFace dataset publishing). If false, save actual audio clips locally.",
+      "type": "boolean",
+      "editor": "checkbox",
+      "default": true
+    }
+  },
+  "required": ["searchQueries", "primaryLanguage"]
+}

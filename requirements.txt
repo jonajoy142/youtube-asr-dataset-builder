@@ -1,0 +1,25 @@
+# Apify SDK
+apify~=2.0
+
+# YouTube downloading
+yt-dlp>=2024.1.0
+
+# Whisper transcription with word-level timestamps
+# NOTE: On M4 Mac, whisperx uses MPS acceleration automatically
+# On Apify cloud (Linux), it uses CUDA if available, else CPU
+whisperx>=3.1.0
+
+# Audio processing
+pydub>=0.25.1
+librosa>=0.10.0
+soundfile>=0.12.1
+
+# Language detection
+langdetect>=1.0.9
+
+# Malayalam script detection (unicode ranges)
+# No extra package needed — handled via unicode ranges in code
+
+# Utilities
+tqdm>=4.66.0
+python-dotenv>=1.0.0

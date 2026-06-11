@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "multilingual-codeswitching-scraper",
+  "title": "Multilingual Code-Switching Audio Scraper",
+  "description": "Scrapes YouTube for code-switched speech (e.g. Malayalam+English / Manglish), transcribes with WhisperX, detects language switch points, and outputs annotated clips for ASR benchmark dataset creation.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 1024,
+  "maxMemoryMbytes": 8192,
+  "dockerfile": "./Dockerfile",
+  "readme": "./ACTOR.md",
+  "input": "./input_schema.json",
+  "storages": {}
+}
