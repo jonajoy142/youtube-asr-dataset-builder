@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "YouTube Speech Dataset Builder Output",
+  "description": "Generated multilingual speech dataset clips, transcripts, and metadata for ASR training.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Dataset Results",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
